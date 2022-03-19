@@ -2,37 +2,30 @@
     <div class="column is-half-mobile" style="border-right: 1px solid #dbdbdb">
         <i class="fas fa-concierge-bell fa-lg"></i>
         <div></div>
-        <p class="has-text-weight-bold is-size-6">Servings</p>
+        <p class="has-text-weight-bold is-size-6">{{.Site.Params.servings}}</p>
         <div></div>
-        {{ .Params.Servings | default "---"}} Servings
+        {{ .Params.Servings | default "---"}}
     </div>
     <div class="column is-half-mobile" style="border-right: 1px solid #dbdbdb">
         <i class="fas fa-hourglass-half fa-lg"></i>
         <div></div>
-        <p class="has-text-weight-bold is-size-6">Prep time</p>
+        <p class="has-text-weight-bold is-size-6">{{.Site.Params.prep_time}}</p>
         <div></div>
-        {{ .Params.Prep_time | default "---"}} Minutes
+        {{ .Params.Prep_time | default "---"}} {{.Site.Params.mins}}
     </div>
     <div class="column is-half-mobile" style="border-right: 1px solid #dbdbdb">
         <i class="fas fa-temperature-high fa-lg"></i>
         <div></div>
         {{ if .Params.Cook }}
-            <p class="has-text-weight-bold is-size-6">Cooking Time</p>
+            <p class="has-text-weight-bold is-size-6">{{.Site.Params.total_time}}</p>
         {{ else }}
-            <p class="has-text-weight-bold is-size-6">Cooling Time</p>
+            <p class="has-text-weight-bold is-size-6">{{.Site.Params.total_time}}</p>
         {{ end }}
         <div></div>
         {{ if eq .Params.Cook_increment "hours" }}
-            {{ .Params.Cook_time | default "---"}} Hours
+            {{ .Params.Cook_time | default "---"}} {.Site.Params.searchtext}
         {{ else }}
-            {{ .Params.Cook_time | default "---"}} Minutes
+            {{ .Params.Cook_time | default "---"}} {{.Site.Params.mins}}
         {{ end }}
     </div>
-    <div class="column is-half-mobile">
-        <i class="fas fa-fire fa-lg"></i>
-        <div></div>
-        <p class="has-text-weight-bold is-size-6">Calories</p>
-        <div></div>
-        {{ .Params.Calories | default "---" }} Kcal
-    </div>     
 </div>

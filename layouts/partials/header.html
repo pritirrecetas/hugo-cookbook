@@ -1,4 +1,9 @@
-<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+<style>
+    a{
+        color:#00d1b2;
+    }
+    </style>
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-brand">
             {{ with .Site.Params.logo }}
@@ -14,7 +19,7 @@
         </a>
     </div>
     <div id="navBarMenu" class="navbar-menu">
-        <div class="navbar-start">
+        <div class="navbar-start" style="font-size:120%">
             {{ range .Site.Menus.main }}
             <a class="navbar-item" href="{{- .URL -}}">
             {{ if .Pre }}
