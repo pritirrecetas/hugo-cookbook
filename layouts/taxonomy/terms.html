@@ -17,11 +17,11 @@
                             {{ range $key, $value := $taxonomy }}
                                 {{ if (eq $key ($.Scratch.Get "category")) }}
                                     {{ $.Scratch.Set "count" (len $value) }}
-                                    {{ if (gt (len $value) 1 ) }}
+                                    <!-- {{ if (gt (len $value) 1 ) }}
                                         {{ len $value }} Recipes Found
                                     {{ else }}
                                         1 Recipe Found
-                                    {{ end }}
+                                    {{ end }} -->
                                 {{ end }}
                             {{ end }}
                         {{ end }}
